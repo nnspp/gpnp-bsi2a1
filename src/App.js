@@ -51,9 +51,9 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <header className="App-header" style={{ backgroundColor: '#fff', height: 'auto', alignItems: 'center', justifyContent: 'flex-start' }}>
+      <header className="App-header">
         <img src={crossed} alt="crossed out" style={{ height: '1.5em' }} /> 
-        <h1 style={{ color: '#dc3545', fontSize: '0.8em' }}>Public Holiday</h1>
+        <h1 style={{ color: '#dc3545', fontSize: '0.8em' }}>Public Holidays</h1>
       </header>
 
 <div id="output">
