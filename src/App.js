@@ -16,9 +16,10 @@ function App() {
 
 useEffect(() => {
     //fetch the API data
+    //fetch API data using axios for API URL https://date.nager.at/api/v3/publicholidays/2025/AT and Request of GET /api/v3/PublicHolidays/{Year}/{CountryCode} 
     const fetchHolidays = async () => {
       try {
-        const response = await axios.get('https://date.nager.at/api/v2/NextPublicHolidaysWorldwide');
+        const response = await axios.get('https://date.nager.at/api/v3/publicholidays/2025/AT');
         setHolidays(response.data);
         setLoading(false);
       } catch (error) {
@@ -47,7 +48,6 @@ useEffect(() => {
   } 
 
 //create a small white header with a tiny height and with a tiny logo and red title 'Public Holiday'
-//how can i make header.Appheader smaller? 
 
   return (
     <div className="App">

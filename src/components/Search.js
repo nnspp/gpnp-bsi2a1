@@ -4,30 +4,12 @@ import React from "react";
 
 export default function Search({ searchTerm, setSearchTerm }) {
   return (
-    <div>
+    <div className="search-bar">
       <input
         type="text"
         placeholder="Search..."
         value={searchTerm}
-        onChange={(e) => setSearchTerm("")}
-
-        //add some special and cool looking style to the search bar
-        style={{
-          width: "200px",
-          padding: "10px",
-          borderRadius: "5px",
-          border: "1px solid #ccc",
-          boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-        }}
-
-        //exemplary code asking for a fancy style gave following style pfff:
-        //  style={{
-        //  padding: "10px",
-        //  borderRadius: "5px",
-        //  border: "1px solid #ccc",
-        //  width: "100%",
-        //  boxSizing: "border-box",
-        //}}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
       <button
         onClick={() => setSearchTerm("")}
