@@ -19,7 +19,7 @@ useEffect(() => {
     //fetch API data using axios for API URL https://date.nager.at/api/v3/publicholidays/2025/AT and Request of GET /api/v3/PublicHolidays/{Year}/{CountryCode} 
     const fetchHolidays = async () => {
       try {
-        const response = await axios.get('https://date.nager.at/api/v3/publicholidays/2025/AT');
+        const response = await axios.get('https://date.nager.at/api/v3/publicholidays/2025/DE');
         setHolidays(response.data);
         setLoading(false);
       } catch (error) {
@@ -34,7 +34,9 @@ useEffect(() => {
   useEffect(() => {
     if (searchTerm) {
       const filtered = holidays.filter(holiday =>
-        holiday.name.toLowerCase().includes(searchTerm.toLowerCase())
+        holiday.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        holiday.localName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        holiday.date.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredHolidays(filtered);
     } else {
