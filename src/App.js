@@ -59,15 +59,17 @@ useEffect(() => {
       </header>
 
 <div id="output">
-  <Holidays holidays={filteredHolidays} />
   <div className="search-bar">
     <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
   </div>
   <div className="holiday-count">
     <p>Total Holidays: {filteredHolidays.length}</p>
-  </div>
+  </div>  
+  <Holidays holidays={filteredHolidays} />
   <div className="footer">
-    <p>Powered by Public Holiday API</p>
+    <p>
+      <a href="https://date.nager.at/Api">Powered by Public Holiday API</a>
+    </p>
   </div>
 </div>
 

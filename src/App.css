@@ -37,6 +37,16 @@
   }
 }
 
+td, th {
+  text-align: left;
+  padding-right: 20px;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+
 .Search {
   display: flex;
   justify-content: center;
