@@ -30,14 +30,27 @@ useEffect(() => {
     fetchHolidays();
   }, []);
   
+// Helper function to format the date. Same as in Holidays.js, inefficient :(
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  return new Intl.DateTimeFormat('de', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(date);
+}
 
   useEffect(() => {
     if (searchTerm) {
-      const filtered = holidays.filter(holiday =>
+      const filtered = holidays.filter(holiday => {
+        const formattedDate = formatDate(holiday.date);
+        return(
         holiday.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         holiday.localName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        holiday.date.toLowerCase().includes(searchTerm.toLowerCase())
+        holiday.date.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        formattedDate.toLowerCase().includes(searchTerm.toLowerCase())
       );
+    });
       setFilteredHolidays(filtered);
     } else {
       setFilteredHolidays(holidays);
